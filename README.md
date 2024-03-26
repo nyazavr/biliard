@@ -1,4 +1,6 @@
-# React + TypeScript + Vite
+Demo: https://codesandbox.io/p/devbox/sweet-grass-k69fx6?file=%2Fsrc%2Fmodal%2FColorPickerModal.tsx%3A10%2C24
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
