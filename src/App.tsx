@@ -180,15 +180,15 @@ function App() {
         balls.current[i].position.Y += balls.current[i].velocity.Y / 10;
       }
       if (
-        (balls.current[i].position.X <= 20 &&
+        (balls.current[i].position.X <= balls.current[i].radius &&
           balls.current[i].velocity.X < 0) ||
-        (balls.current[i].position.X >= 480 && balls.current[i].velocity.X > 0)
+        (balls.current[i].position.X >= 500-balls.current[i].radius && balls.current[i].velocity.X > 0)
       ) {
         balls.current[i].velocity.X = -balls.current[i].velocity.X * entropy;
       } else if (
-        (balls.current[i].position.Y <= 20 &&
+        (balls.current[i].position.Y <= balls.current[i].radius &&
           balls.current[i].velocity.Y < 0) ||
-        (balls.current[i].position.Y >= 230 && balls.current[i].velocity.Y > 0)
+        (balls.current[i].position.Y >= 250-balls.current[i].radius && balls.current[i].velocity.Y > 0)
       ) {
         balls.current[i].velocity.Y = -balls.current[i].velocity.Y * entropy;
       }
@@ -240,6 +240,10 @@ function App() {
     <div className="App">
       {colorPickerActive ? (
         <ColorPickerModal
+          position={{
+            X: targetBall.current.position.X,
+            Y: targetBall.current.position.Y,
+          }}
           ball={targetBall.current}
           onClose={onCloseColorPicker}
         ></ColorPickerModal>
